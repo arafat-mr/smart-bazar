@@ -45,21 +45,18 @@
 
 ---
 
-## 🧱 Tech Stack
-
-| Category           | Tools Used                                                                 |
-|-------------------|----------------------------------------------------------------------------|
-| 🚀 Frontend        | [React](https://reactjs.org/), [Vite](https://vitejs.dev/)                |
-| 🎨 Styling         | [Tailwind CSS](https://tailwindcss.com/), [AOS](https://michalsnik.github.io/aos/) |
-| 🔐 Auth            | [Firebase](https://firebase.google.com/)                                  |
-| 🧠 State & Query   | [TanStack React Query](https://tanstack.com/query/v5), [React Hook Form](https://react-hook-form.com/) |
-| 📦 API             | [Axios](https://axios-http.com/)                                           |
-| 💳 Payments        | [Stripe.js](https://stripe.com/docs/js), [@stripe/react-stripe-js](https://stripe.com/docs/stripe-js/react) |
-| 📈 Charts          | [Recharts](https://recharts.org/)                                         |
-| 📸 Icons & UI      | [Lucide](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/) |
-| 🎥 Animations      | [Framer Motion](https://www.framer.com/motion/), [Lottie](https://lottiefiles.com/) |
-| 🧁 UI Add-ons      | [React Toastify](https://fkhadra.github.io/react-toastify/), [SweetAlert2](https://sweetalert2.github.io/) |
-
----
+| Category          | Tools Used                                                                                                  |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- |
+| 🚀 Frontend       | [React](https://reactjs.org/), [Vite](https://vitejs.dev/)                                                  |
+| 🎨 Styling        | [Tailwind CSS](https://tailwindcss.com/), [AOS](https://michalsnik.github.io/aos/)                          |
+| 🔐 Authentication | [Firebase](https://firebase.google.com/)                                                                    |
+| 🧠 State & Query  | [TanStack React Query](https://tanstack.com/query/v5), [React Hook Form](https://react-hook-form.com/)      |
+| 📦 API            | [Axios](https://axios-http.com/)                                                                            |
+| 💳 Payments       | [Stripe.js](https://stripe.com/docs/js), [@stripe/react-stripe-js](https://stripe.com/docs/stripe-js/react) |
+| 📈 Charts         | [Recharts](https://recharts.org/)                                                                           |
+| 📸 Icons & UI     | [Lucide](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)                    |
+| 🎥 Animations     | [Framer Motion](https://www.framer.com/motion/), [Lottie](https://lottiefiles.com/)                         |
+| 🧁 UI Add-ons     | [React Toastify](https://fkhadra.github.io/react-toastify/), [SweetAlert2](https://sweetalert2.github.io/)  |
+| 🖥️ Backend       | [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/)                                        |
 
 
