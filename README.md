@@ -7,7 +7,7 @@
 ## 🚀 Live Preview
 
 🔗 **[Visit Smart Bazar](https://gleaming-alpaca-00df2d.netlify.app)**  
-(Replace with your actual deployed link)
+
 
 ---
 
