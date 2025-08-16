@@ -40,17 +40,6 @@ const starVariants = {
   visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 500 } },
 };
 
-const pulseAnimation = {
-  animate: {
-    color: ["#16a34a", "#22c55e", "#16a34a"], 
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      repeatType: "loop",
-      ease: "easeInOut",
-    },
-  },
-};
 
 const Reviews = () => {
   const reviews = [
@@ -104,8 +93,8 @@ const Reviews = () => {
         className="mb-8"
       >
         <motion.h3
-          className="text-lg md:text-3xl bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent text-center font-semibold"
-          {...pulseAnimation}
+          className="text-lg md:text-3xl text-gray-900 text-center font-semibold"
+         
         >
           What People Say About Our Vegetable Markets
         </motion.h3>
@@ -115,21 +104,22 @@ const Reviews = () => {
         {reviews.map(({ id, name, role, image, rating, review }) => (
           <motion.div
             key={id}
-            className="card bg-green-900 shadow-md rounded-lg flex flex-col justify-center items-center p-6"
+            className="card text-black shadow-md rounded-lg flex flex-col justify-center items-center p-6"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.5 }}
             variants={cardVariants}
             whileHover="hover"
+            style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
           >
             <div className="w-full flex justify-center mb-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
                 <img src={image} alt={name} className="object-cover w-full h-full" />
               </div>
             </div>
-            <p className="text-green-100 text-center font-medium mb-4">{review}</p>
-            <p className="text-green-200 text-center font-bold">{`- ${name}`}</p>
-            <p className="text-green-300 text-center text-sm font-semibold mb-3">{role}</p>
+            <p className="text-center font-medium mb-4">{review}</p>
+            <p className=" text-center font-bold">{`- ${name}`}</p>
+            <p className=" text-center text-sm font-semibold mb-3">{role}</p>
             <motion.div
               className="flex justify-center gap-1 text-yellow-400"
               variants={starContainerVariants}
@@ -151,7 +141,7 @@ const Reviews = () => {
                     delay: i * 0.15, 
                   }}
                 >
-                  <FaStar className={i < rating ? "text-yellow-400" : "text-green-600"} />
+                  <FaStar className={i < rating ? "text-green-600" : "text-gray-600"} />
                 </motion.span>
               ))}
             </motion.div>

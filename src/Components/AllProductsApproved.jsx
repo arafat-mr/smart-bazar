@@ -49,33 +49,34 @@ const AllApprovedProducts = () => {
     );
 
   return (
-    <div className="rubik min-h-screen bg-gradient-to-r from-white to-green-100 text-green-900 w-full p-6 rounded-md shadow-md">
-      <h1 className="text-lg md:text-3xl font-bold mb-6 text-green-900">
+    <div className="rubik min-h-screen  w-full p-6 rounded-md shadow-md">
+     
+      <h1 className="text-lg md:text-3xl font-bold mb-6 text-gray-900">
         🛍️ All Approved Products
       </h1>
 
       {/* Filters and Sorting */}
       <div className="flex flex-wrap gap-4 mb-6 items-center">
         <select
-          className="input input-bordered bg-white border-green-300 text-green-900"
+          className="input input-bordered border-black bg-transparent text-gray-900"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
-          <option value="">Sort by Created (Default)</option>
+          <option value="">Sort by Created Date(Default)</option>
           <option value="priceAsc">Price Low to High</option>
           <option value="priceDesc">Price High to Low</option>
         </select>
 
         <input
           type="date"
-          className="input input-bordered bg-white border-green-300 text-green-900 placeholder-green-700"
+          className="input input-bordered bg-transparent border-black  text-gray-900"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
           placeholder="Start Date"
         />
         <input
           type="date"
-          className="input input-bordered bg-white border-green-300 text-green-900 placeholder-green-700"
+          className="input input-bordered border-black bg-transparent text-gray-900"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
           placeholder="End Date"
@@ -83,7 +84,7 @@ const AllApprovedProducts = () => {
 
         <button
           onClick={() => setPage(0)}
-          className="btn bg-green-700 text-white hover:bg-green-800 btn-sm"
+          className="btn btn-outline border-black btn-secondary text-gray-900 hover:bg-white btn-sm"
         >
           Apply Filters
         </button>

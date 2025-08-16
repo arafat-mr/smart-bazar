@@ -66,7 +66,7 @@ const Counter = () => {
 
   return (
     <div>
-      <h3 className="text-center bg-gradient-to-r from-green-600 to-lime-500 bg-clip-text text-transparent text-2xl font-bold mt-12">
+      <h3 className="text-center text-gray-900 text-2xl font-bold mt-12">
         🛒 Our Market Impact
       </h3>
 
@@ -77,13 +77,14 @@ const Counter = () => {
         {stats.map((stat, i) => (
           <motion.div
             key={i}
-            className="bg-white rounded-2xl shadow-xl p-6 text-center flex flex-col items-center justify-center border border-green-200 transition-all"
+            className=" rounded-2xl shadow-xl p-6 text-center flex flex-col items-center justify-center border border-green-200 transition-all"
             variants={wiggleCard}
             initial="initial"
             animate="animate"
             whileHover="whileHover"
             whileInView="whileInView"
             viewport={{ once: true, amount: 0.5 }}
+            style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
           >
             <div className="text-green-600 mb-3">{stat.icon}</div>
             <div className="text-3xl font-extrabold text-gray-800">

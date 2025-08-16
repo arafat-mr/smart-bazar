@@ -47,10 +47,10 @@ const Navbar = () => {
   );
 
   return (
-    <>
+    <div className="max-w-15/16 mx-auto">
       <input type="checkbox" id="drawer-toggle" className="drawer-toggle" />
-      <div className="drawer-content">
-        <div className="navbar text-black shadow-sm bg-transparent px-5">
+      <div className="drawer-content ">
+        <div className="navbar text-black  bg-transparent ">
           <div className="navbar-start">
             <label
               htmlFor="drawer-toggle"
@@ -126,7 +126,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="drawer-side w-screen h-screen ">
+      <div className="drawer-side w-screen h-screen  ">
         <label
           htmlFor="drawer-toggle"
           className="drawer-overlay bg-black bg-opacity-50"
@@ -146,7 +146,7 @@ const Navbar = () => {
           <ul className="menu  w-full text-base-content ">{links}</ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

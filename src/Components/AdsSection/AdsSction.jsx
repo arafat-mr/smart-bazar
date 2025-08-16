@@ -66,7 +66,7 @@ const AdsSection = () => {
 
   return (
     <section className="py-12">
-      <h2 className="text-3xl font-bold text-center text-yellow-600 mb-8">
+      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
         📢  Advertisements By Vendors
       </h2>
 
@@ -77,7 +77,7 @@ const AdsSection = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
         <motion.div
-          className="flex gap-6 w-max whitespace-nowrap"
+          className="flex gap-6 w-max whitespace-nowrap p-3"
           animate={controls}
           style={{ x }}
         >
@@ -85,8 +85,9 @@ const AdsSection = () => {
             <motion.div
               key={`${ad._id}-${idx}`} 
               whileHover={{ scale: 1.03 }}
-              className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-2xl p-6 relative mx-2 sm:mx-4 max-w-full
+              className="flex flex-col md:flex-row items-center  rounded-2xl shadow-2xl p-6 relative mx-2 sm:mx-4 max-w-full
                          w-[90vw] sm:w-[450px] md:w-[600px] lg:w-[650px]"
+                         style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
             >
               {/* Image & Badge */}
               <div className="relative w-full md:w-1/2 h-48 md:h-56 rounded-xl overflow-hidden">
@@ -102,7 +103,7 @@ const AdsSection = () => {
 
               {/* Content */}
               <div className="md:pl-6 pt-4 md:pt-0 w-full md:w-1/2 text-center md:text-left">
-                <h3 className="text-xl font-bold text-yellow-700 truncate">{ad.title}</h3>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-yellow-500 bg-clip-text text-transparent truncate">{ad.title}</h3>
                 <p
                   className="text-gray-600 text-sm mt-2 break-words overflow-hidden"
                   style={{
@@ -116,7 +117,8 @@ const AdsSection = () => {
                 <div className="mt-3">
                   <Link
                     to="/allProductsApproved"
-                    className="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition inline-block"
+                    className="px-6 py-3 bg-pink-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse"
+    style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)"}} 
                   >
                     🛒 Visit Store
                   </Link>

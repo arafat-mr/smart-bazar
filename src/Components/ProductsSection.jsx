@@ -74,10 +74,10 @@ const { data: products = [], isLoading, isError } = useQuery({
 
   return (
     <div>
-      <h1 className="text-black font-semibold text-2xl md:text-4xl ml-6 mt-5 text-center md:text-start ">
+      <h1 className="text-gray-900 font-semibold text-2xl md:text-4xl  mt-5 mb-6 text-center md:text-start ">
         Products
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6 text-black">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-3 text-black">
         {limitedMarkets.map(([marketName, marketProducts], idx) => {
           const image = staticImages[idx % staticImages.length];
           const latestDate = getLatestDate(marketProducts);
@@ -87,10 +87,11 @@ const { data: products = [], isLoading, isError } = useQuery({
               whileHover={{ scale: 1.04, y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               key={marketName}
-              className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col relative border border-white"
+              className=" rounded-lg shadow-lg overflow-hidden flex flex-col relative border border-white"
               style={{
                 boxShadow:
-                  "0 0 20px 5px rgba(34,193,195,0.2), 0 0 40px 10px rgba(253,187,45,0.15)",
+                  // "0 0 20px 5px rgba(34,193,195,0.2), 0 0 40px 10px rgba(253,187,45,0.15)",
+                  "0 0 15px rgba(236, 72, 153, 0.8)" 
               }}
             >
               <img
@@ -115,7 +116,10 @@ const { data: products = [], isLoading, isError } = useQuery({
                 <Link
                   to={`/product-details/${marketName}`}
                   state={{ image }}
-                  className="btn btn-primary btn-sm mt-auto"
+                  className=" px-6  py-3 text-center  bg-pink-500 text-white  rounded-full shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
+                style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
                 >
                   🔍 View Details
                 </Link>

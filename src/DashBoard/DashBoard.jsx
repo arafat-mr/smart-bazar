@@ -40,13 +40,28 @@ const DashBoard = () => {
 
   return (
     <div className='min-h-screen bg-[url("https://i.ibb.co/pvwjZxGk/5557528.jpg")] bg-cover bg-center'>
-      {/* Navbar */}
-      <div className="navbar p-3 bg-transparent w-full shadow-2xl hidden lg:flex justify-between items-center">
-        <div onClick={handleHome} className="cursor-pointer">
+      <div className="min-h-screen w-full relative">
+  {/* Aurora Dream Soft Harmony */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: `
+       radial-gradient(ellipse 80% 60% at 60% 20%, rgba(175, 109, 255, 0.50), transparent 65%),
+        radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.45), transparent 65%),
+        radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 235, 170, 0.43), transparent 62%),
+        radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.48), transparent 68%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)
+      `,
+    }}
+  />
+  {/* Your content goes here */}
+  {/* Navbar */}
+      <div className="navbar p-3 bg-transparent w-full shadow-2xl hidden lg:flex justify-between items-center relative z-40">
+        <div onClick={handleHome} className="cursor-pointer ">
           <Logo />
         </div>
-        <div className="text-blue-400 font-semibold">
-          <p>Logged in as : {role}</p>
+        <div className=" font-semibold ">
+          <p className="text-black">Logged in as : {role}</p>
         </div>
       </div>
 
@@ -54,7 +69,7 @@ const DashBoard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
         {/* Main Content Area */}
-        <div className="drawer-content flex flex-col min-h-screen bg-transparent text-white">
+        <div className="drawer-content flex flex-col min-h-screen bg-transparent ">
           {/* Mobile Navbar */}
           <div className="navbar bg-transparent w-full lg:hidden shadow-2xl">
             <div className="flex-none">
@@ -82,8 +97,8 @@ const DashBoard = () => {
               onClick={handleHome}
               className="mx-2 flex-1 px-2 text-lg font-semibold flex justify-between items-center cursor-pointer"
             >
-              <Logo />
-              <p className="text-blue-400 font-semibold text-sm md:text-lg">
+              <Logo /> 
+              <p className=" font-semibold text-sm md:text-lg">
                 Logged in as : {role}
               </p>
             </div>
@@ -102,15 +117,15 @@ const DashBoard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-
+{/* // bg-[#0a1e3ad9] */}
           <ul
             className="menu w-60 md:w-72 lg:w-80 min-h-full p-4
             backdrop-blur-2xl
-            bg-[#0a1e3ad9]
-            border-2 border-l-0 border-blue-500
+            
+            border-1 border-l-0 border-gray-300
             rounded-md
             shadow-2xl shadow-blue-400/30
-            text-white space-y-2"
+            text-black space-y-2"
           >
             {/* Logo for mobile */}
             <div onClick={handleHome} className="lg:hidden cursor-pointer">
@@ -148,9 +163,12 @@ const DashBoard = () => {
       </div>
 
       <ToastContainer position="top-right" autoClose={2000} />
-      <div className="mt-4">
+      <div className="mt-4 relative z-40">
         <Footer />
       </div>
+
+</div>
+    
     </div>
   );
 };
