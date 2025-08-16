@@ -89,13 +89,17 @@ const PaymentForm = () => {
     <div className="mt-10 mb-10 p-4">
       <form
         onSubmit={handleSubmit}
-        className="space-y-4 bg-gradient-to-b from-violet-300 to-white p-6 rounded-xl shadow-md w-full max-w-md mx-auto"
+        className="space-y-8  p-8 bg-transparent w-full max-w-md mx-auto  px-6  py-3 text-center font-semibold  text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80  transition duration-300 
+             text-sm "
+              style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
       >
-        <CardElement className="p-2 border rounded bg-white" />
+        <CardElement className="p-2 border rounded" />
         <div className="flex justify-end">
           <button
             type="submit"
-            className="btn btn-secondary w-full bg-transparent text-black hover:bg-gray-600 hover:text-white"
+            className="btn btn-secondary w-full bg-transparent text-black hover:shadow-pink-400/80 "
+             style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
             disabled={!stripe}
           >
             Pay ৳{amount}

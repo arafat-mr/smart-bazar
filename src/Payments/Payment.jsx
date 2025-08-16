@@ -8,7 +8,10 @@ const Payment = () => {
     ;
     return (
         <Elements  stripe={stripePromise}>
+            <div className='p-5'>
+
 <PaymentForm/>
+            </div>
         </Elements>
     );
 };

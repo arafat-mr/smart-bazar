@@ -49,8 +49,7 @@ const AllApprovedProducts = () => {
     );
 
   return (
-    <div className="rubik min-h-screen  w-full p-6 rounded-md shadow-md">
-     
+    <div className="rubik min-h-screen  w-full p-6 md:p-10 lg:p-14 rounded-md shadow-md">
       <h1 className="text-lg md:text-3xl font-bold mb-6 text-gray-900">
         🛍️ All Approved Products
       </h1>
@@ -100,16 +99,15 @@ const AllApprovedProducts = () => {
           return (
             <div
               key={product._id}
-              className="bg-white text-green-900 border border-green-200 rounded-lg shadow-md p-4 flex flex-col"
+              className=" text-gray-900 border border-white rounded-lg shadow-md p-4 flex flex-col"
+              style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
             >
               <img
                 src={product.image}
                 alt={product.itemName}
                 className="w-full h-52 object-cover rounded-md mb-4"
               />
-              <h3 className="text-xl font-semibold mb-1">
-                {product.itemName}
-              </h3>
+              <h3 className="text-xl font-semibold mb-1">{product.itemName}</h3>
               <p className="mb-1">🏪 Market: {product.marketName}</p>
               <p className="mb-1">👨‍🌾 Vendor: {product.vendorName}</p>
               <p className="mb-2">💵 Price: ৳{latestPrice} / kg</p>
@@ -117,7 +115,10 @@ const AllApprovedProducts = () => {
 
               <Link
                 to={`${product._id}`}
-                className="btn mt-auto bg-green-600 hover:bg-green-700 text-white"
+                className=" px-6  py-3 text-center font-semibold bg-pink-500 text-white  rounded-full shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
+                style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
               >
                 🔍 View Details
               </Link>
@@ -141,7 +142,9 @@ const AllApprovedProducts = () => {
         <button
           className="btn btn-sm bg-green-500 hover:bg-green-600 text-white"
           disabled={page + 1 >= totalPages}
-          onClick={() => setPage((old) => (old + 1 < totalPages ? old + 1 : old))}
+          onClick={() =>
+            setPage((old) => (old + 1 < totalPages ? old + 1 : old))
+          }
         >
           Next
         </button>

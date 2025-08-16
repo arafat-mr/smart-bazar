@@ -46,7 +46,7 @@ const AddToWatchlistButton = ({ product }) => {
       title={buttonTitle}
       className={`${
         isDisabled
-          ? "bg-yellow-300 cursor-not-allowed opacity-60"
+          ? "  px-6   py-3 text-center font-semibold bg-pink-500 text-white  rounded-full shadow-lg hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse    text-sm  cursor-not-allowed opacity-60"
           : "bg-yellow-400 hover:bg-yellow-500"
       } text-white font-medium py-2 px-4 rounded-lg transition`}
     >

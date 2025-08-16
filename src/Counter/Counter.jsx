@@ -77,7 +77,7 @@ const Counter = () => {
         {stats.map((stat, i) => (
           <motion.div
             key={i}
-            className=" rounded-2xl shadow-xl p-6 text-center flex flex-col items-center justify-center border border-green-200 transition-all"
+            className=" rounded-2xl shadow-xl p-6 text-center flex flex-col items-center justify-center border border-gray-200 transition-all"
             variants={wiggleCard}
             initial="initial"
             animate="animate"

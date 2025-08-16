@@ -54,8 +54,11 @@ const SingleProductDetails = () => {
   const currentPrice = product.prices?.[0];
 
   return (
-    <div className="max-w-6xl mx-auto mt-10 mb-10 p-6 bg-gradient-to-br from-white via-blue-50 to-white rounded-xl shadow-lg">
-      <div className="bg-white rounded-lg md:flex overflow-hidden shadow-md border border-gray-200">
+    <div className="max-w-6xl mx-auto mt-10 mb-10 p-6  rounded-xl shadow-lg"
+     style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}>
+     
+               
+      <div className=" rounded-lg md:flex overflow-hidden shadow-md border border-gray-200">
         {/* Image */}
         <div className="md:w-5/12 bg-gray-200">
           <img
@@ -67,7 +70,7 @@ const SingleProductDetails = () => {
 
         {/* Details */}
         <div className="md:w-7/12 p-6 space-y-4 text-gray-700">
-          <h2 className="text-3xl font-bold text-blue-800">
+          <h2 className="text-3xl font-bold ">
             {product.itemName}
           </h2>
           <p className="text-sm text-gray-500">
@@ -120,8 +123,11 @@ const SingleProductDetails = () => {
           <div className="flex flex-wrap gap-4 mt-6">
             {/* Buy Product Button */}
             <button
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-lg transition"
+               className=" px-6  py-3 text-center font-semibold bg-pink-500 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
               onClick={openBuyModal}
+               style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
             >
               Buy Product
             </button>
@@ -135,32 +141,34 @@ const SingleProductDetails = () => {
       {/* ====== SIMPLE BUY MODAL ====== */}
       {isBuyModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent backdrop-blur-md px-4">
-          <div className="bg-[#ece1fe] text-black bg-opacity-90 rounded-lg max-w-md w-full p-6 relative shadow-lg">
+          <div className=" bg-purple-400 text-gray-800 bg-opacity-90 rounded-lg max-w-md w-full p-6 relative shadow-lg"
+          
+          style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}>
             <button
-              className="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl"
+              className="absolute top-2 right-3  hover:text-red-600 text-xl"
               onClick={closeBuyModal}
             >
               &times;
             </button>
 
-            <h2 className="text-xl font-bold mb-4">Buy Product</h2>
+            <h2 className="text-xl font-bold mb-4 text-black">Buy Product</h2>
 
             <div className="mb-4">
-              <div className="w-full">
+              <div className="w-full text-black">
                 <img
                   src={product.image}
                   alt={product.itemName}
                   className="h-52 w-full object-cover rounded-md mb-2"
                 />
               </div>
-              <h3 className="text-lg font-semibold">{product.itemName}</h3>
+              <h3 className="text-lg font-semibold text-black">{product.itemName}</h3>
               <p className="text-black">
                 Price: ৳{currentPrice?.price || "N/A"}/kg
               </p>
             </div>
 
             <div className="mb-4">
-              <label htmlFor="quantity" className="block font-medium mb-1">
+              <label htmlFor="quantity" className="block font-medium mb-1 text-black">
                 Quantity (kg)
               </label>
               <input
@@ -169,16 +177,22 @@ const SingleProductDetails = () => {
                 min="1"
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
-                className="w-full border rounded px-3 py-2"
+                className="w-full border rounded px-3 py-2 text-black"
               />
             </div>
 
-            <div className="text-right font-semibold text-green-700 mb-4">
+            <div className="text-right font-semibold text-indigo-900 mb-4">
               Total: ৳{(quantity * (currentPrice?.price || 0)).toFixed(2)}
             </div>
 
             <div className="flex justify-end gap-2">
-              <button className="btn btn-outline" onClick={closeBuyModal}>
+              <button 
+              
+             className=" px-6  py-3 text-center font-semibold bg-red-500 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
+              
+              onClick={closeBuyModal}>
                 Cancel
               </button>
               <Link
@@ -195,7 +209,10 @@ const SingleProductDetails = () => {
 
 
                 }}
-                className="btn btn-primary"
+                // className="btn btn-primary"
+                className=" px-6  py-3 text-center font-semibold bg-green-600 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
                 onClick={() => {
                 
                   Swal.fire({
