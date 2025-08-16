@@ -38,10 +38,18 @@ const Navbar = () => {
       <li className="">
         <NavLink to="/allProductsApproved">All Products</NavLink>
       </li>
+      <li className="">
+        <NavLink to="/faq">FAQ</NavLink>
+      </li>
       {user && (
+        <>
         <li className="">
           <NavLink to="/dashBoard">DashBoard</NavLink>
         </li>
+        <li className="">
+          <NavLink to="/smartBazarPlanner">Spend Smartly</NavLink>
+        </li>
+        </>
       )}
     </>
   );

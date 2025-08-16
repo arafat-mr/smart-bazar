@@ -6,7 +6,7 @@ import ProductsCardSection from "../Components/ProductsSection";
 
 const Root = () => {
   return (
-    <div className="rubik min-h-screen w-full   text-white  ">
+    <div className="rubik min-h-screen w-full   text-white   ">
       <div className="min-h-screen w-full relative ">
         {/* Aurora Dream Soft Harmony */}
         <div
@@ -23,7 +23,7 @@ const Root = () => {
         />
         {/* Your content goes here */}
         <div className="relative z-40 ">
-            <div className="w-full shadow-sm">
+            <div className="w-full shadow-sm sticky top-0 backdrop-blur-2xl z-50">
           <Navbar />
 
             </div>

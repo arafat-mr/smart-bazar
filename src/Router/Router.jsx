@@ -32,6 +32,8 @@ import { User } from "lucide-react";
 import VendorRoutes from "../Routes/VendorRoutes";
 import AdminRoutes from "../Routes/AdminRoutes";
 import Payment from "../Payments/Payment";
+import Faq from "../Optionals/Faq";
+import SmartBazarPlanner from "../Optionals/SmartBazarPlanner";
 
 export const router = createBrowserRouter([
   {
@@ -63,8 +65,18 @@ export const router = createBrowserRouter([
         </PrivateRoutes>
       },
       {
+        path:'/smartBazarPlanner',
+        element:<PrivateRoutes>
+          <SmartBazarPlanner/>
+        </PrivateRoutes>
+      },
+      {
         path:'payment/:productId',
         Component:Payment
+      },
+      {
+        path:'/faq',
+        Component:Faq
       }
     ],
   },
@@ -87,10 +99,10 @@ export const router = createBrowserRouter([
     element:<PrivateRoutes>
       <DashBoard/>
     </PrivateRoutes>,
-    // errorElement:<ErrorDashbOard/>,
+   
     children: [
       {
-        //  path:'dashbHome',
+        
         index: true,
         Component: DashbHome,
         
