@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BounceLoader, ClipLoader } from "react-spinners";
+import {  RingLoader } from "react-spinners";
 
 function LoadingSpinner() {
   const [loading, setLoading] = useState(true);
@@ -7,10 +7,10 @@ function LoadingSpinner() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       {loading && (
-       <ClipLoader
-    color="#8B5CF6"  
+       <RingLoader
+    color="#7C3AED"   
     loading={loading}
-    size={60}
+    size={70}
     aria-label="Loading..."
   />
       )}

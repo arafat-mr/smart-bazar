@@ -9,8 +9,8 @@ const Logo = () => {
         src="https://i.ibb.co/dsmt140F/a-basket-brimming-with-vegetables-free-png-removebg-preview.png"
         alt="Smart Bazar Logo"
       />
-      <span className="text-lg font-semibold text-green-600 -ml-2">
-        Smart<span className="text-[#1cd0dd]">Bazar</span>
+      <span className="text-lg font-semibold bg-gradient-to-r from-purple-700 via-pink-500 to-yellow-500 bg-clip-text text-transparent -ml-2">
+        SmartBazar
       </span>
     </Link>
   );

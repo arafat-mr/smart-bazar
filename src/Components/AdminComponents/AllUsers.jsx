@@ -140,7 +140,7 @@ const AllUsers = () => {
             ))}
             {users.length === 0 && (
               <tr>
-                <td colSpan={5} className="text-center p-4 text-white font-semibold">
+                <td colSpan={5} className="text-center p-4 text-black font-semibold">
                   No users found.
                 </td>
               </tr>

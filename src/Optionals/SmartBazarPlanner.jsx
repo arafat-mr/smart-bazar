@@ -4,11 +4,16 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../Hooks/useAxios";
 import LoadingSpinner from "./LoadingSpinner";
 import useUserInfo from "../Hooks/useUserInfo";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const SmartBazarPlanner = () => {
   const [budget, setBudget] = useState("");
   const axios = useAxios();
  const {userInfo}=useUserInfo()
+
+  const navigate=useNavigate()
+
   // TanStack Query
   const { data, isLoading, refetch, remove } = useQuery({
     queryKey: ["budgetItems", budget],
@@ -120,10 +125,11 @@ const SmartBazarPlanner = () => {
               </p>
               <p className="text-gray-900 font-bold text-lg">Price: {item.price}</p>
               <button
+                 onClick={()=> navigate(`/allProductsApproved/${item._id}`)}
                 className={`mt-3 w-full px-4 py-2 bg-pink-500 text-white font-semibold rounded-full shadow-lg hover:shadow-pink-400/80   ${userInfo.role== 'user' ?"hover:scale-105 transition duration-300" :"cursor-not-allowed opacity-40 " }`}
                 style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
               >
-                Add to Watchlist
+               View Details
               </button>
             </motion.div>
           ))}

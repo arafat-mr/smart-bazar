@@ -48,13 +48,13 @@ const MyProducts = () => {
   };
 
   return (
-    <div className="p-2 lg:p-6 max-w-7xl mx-auto bg-blue-900 shadow-2xl">
-      <h2 className="text-2xl font-bold mb-6 text-white">📦 My Products</h2>
+    <div className="p-2 lg:p-6 max-w-7xl mx-auto  shadow-2xl">
+      <h2 className="text-2xl font-bold mb-6 text-black">📦 My Products</h2>
 
       <div className="overflow-x-auto">
-        <table className="table text-white">
+        <table className="table text-black">
           <thead>
-            <tr className="text-white bg-blue-600">
+            <tr className="text-black bg-gray-300">
               <th>#</th>
               <th>Item Name</th>
               <th>Price/unit</th>
@@ -92,7 +92,7 @@ const MyProducts = () => {
                       {product.status === 'rejected' && product.rejectionReason && (
                         <button
                           onClick={() => showRejectionReason(product.rejectionReason)}
-                          className="btn btn-xs bg-yellow-600 text-white"
+                          className="btn btn-xs bg-yellow-600 text-black"
                           title="See rejection reason"
                         >
                           ❓
@@ -115,7 +115,7 @@ const MyProducts = () => {
         </table>
 
         {products.length === 0 && (
-          <p className="text-center mt-6 text-white/70">No products found.</p>
+          <p className="text-center mt-6 text-black/70">No products found.</p>
         )}
       </div>
     </div>

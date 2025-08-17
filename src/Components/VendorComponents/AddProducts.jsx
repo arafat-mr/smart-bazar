@@ -107,14 +107,14 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 rounded-lg shadow-xl bg-transparent backdrop-blur-md border border-blue-500 text-white">
+    <div className="max-w-4xl mx-auto p-6 rounded-lg shadow-xl bg-transparent backdrop-blur-md border border-blue-500 text-black">
       <h2 className="text-2xl font-bold text-center mb-6">🛒 Add Product</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Vendor Email and Name (read-only) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="vendorEmail">
+            <label className="block mb-1 font-semibold text-black" htmlFor="vendorEmail">
               Vendor Email
             </label>
             <input
@@ -123,11 +123,11 @@ const AddProduct = () => {
               readOnly
               value={user?.email || userInfo?.email || ""}
               {...register("vendorEmail")}
-              className="input input-bordered w-full bg-transparent text-white placeholder-white/70"
+              className="input input-bordered w-full bg-transparent placeholder-black/70"
             />
           </div>
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="vendorName">
+            <label className="block mb-1 font-semibold text-black" htmlFor="vendorName">
               Vendor Name
             </label>
             <input
@@ -136,7 +136,7 @@ const AddProduct = () => {
               readOnly
               value={user?.displayName || userInfo?.name || "Unknown"}
               {...register("vendorName")}
-              className="input input-bordered w-full bg-transparent text-white placeholder-white/70"
+              className="input input-bordered w-full bg-transparent text-black placeholder-black/70"
             />
           </div>
         </div>
@@ -144,14 +144,14 @@ const AddProduct = () => {
         {/* Market Name and Item Name */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="marketName">
+            <label className="block mb-1 font-semibold text-black" htmlFor="marketName">
               🏪 Market Name <span className="text-red-500">*</span>
             </label>
             <input
               id="marketName"
               placeholder="e.g. Dhaka New Market"
               {...register("marketName", { required: "Market name is required" })}
-              className={`input input-bordered w-full bg-transparent text-white placeholder-white/70 ${
+              className={`input input-bordered w-full bg-transparent text-black placeholder-black/70 ${
                 errors.marketName ? "border-red-500" : ""
               }`}
             />
@@ -159,14 +159,14 @@ const AddProduct = () => {
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="itemName">
+            <label className="block mb-1 font-semibold text-black" htmlFor="itemName">
               🥦 Item Name <span className="text-red-500">*</span>
             </label>
             <input
               id="itemName"
               placeholder="e.g. Onion"
               {...register("itemName", { required: "Item name is required" })}
-              className={`input input-bordered w-full bg-transparent text-white placeholder-white/70 ${
+              className={`input input-bordered w-full bg-transparent text-black placeholder-black/70 ${
                 errors.itemName ? "border-red-500" : ""
               }`}
             />
@@ -177,27 +177,27 @@ const AddProduct = () => {
         {/* Market Description and Item Description */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="marketDescription">
+            <label className="block mb-1 font-semibold text-black" htmlFor="marketDescription">
               📝 Market Description
             </label>
             <textarea
               id="marketDescription"
               placeholder="Where is the market located, establishment year, etc."
               {...register("marketDescription")}
-              className="textarea textarea-bordered w-full bg-transparent text-white placeholder-white/70"
+              className="textarea textarea-bordered w-full bg-transparent text-black placeholder-black/70"
               rows={4}
             />
           </div>
 
           <div>
-            <label className="block mb-1 font-semibold text-white" htmlFor="itemDescription">
+            <label className="block mb-1 font-semibold text-black" htmlFor="itemDescription">
               📝 Item Description
             </label>
             <textarea
               id="itemDescription"
               placeholder="Notes about freshness, quality, etc."
               {...register("itemDescription")}
-              className="textarea textarea-bordered w-full bg-transparent text-white placeholder-white/70"
+              className="textarea textarea-bordered w-full bg-transparent text-black placeholder-black/70"
               rows={4}
             />
           </div>
@@ -205,7 +205,7 @@ const AddProduct = () => {
 
         {/* Prices dynamic array */}
         <div>
-          <label className=" w-full mb-1 font-semibold text-white">
+          <label className=" w-full mb-1 font-semibold text-black">
             📅 Dates and Prices <span className="text-red-500">*</span>
           </label>
           {fields.map((field, index) => (
@@ -219,7 +219,7 @@ const AddProduct = () => {
                   <DatePicker
                     selected={field.value}
                     onChange={field.onChange}
-                    className="input input-bordered bg-transparent text-white w-full"
+                    className="input input-bordered bg-transparent text-black w-full"
                     dateFormat="yyyy-MM-dd"
                     placeholderText="Select date"
                   />
@@ -234,7 +234,7 @@ const AddProduct = () => {
                   required: "Price required",
                   min: 0.01,
                 })}
-                className="input input-bordered bg-transparent text-white "
+                className="input input-bordered bg-transparent text-black "
               />
               <button
                 type="button"
@@ -260,7 +260,7 @@ const AddProduct = () => {
 
         {/* Image Upload */}
         <div>
-          <label className="block mb-1 font-semibold text-white" htmlFor="imageUpload">
+          <label className="block mb-1 font-semibold text-black" htmlFor="imageUpload">
             🖼️ Upload Product Image <span className="text-red-500">*</span>
           </label>
           <input
@@ -268,14 +268,18 @@ const AddProduct = () => {
             type="file"
             accept="image/*"
             onChange={handleImgUpload}
-            className="file-input file-input-bordered w-full bg-transparent text-white"
+            className="file-input file-input-bordered w-full bg-transparent text-black"
           />
-          {uploading && <p className="mt-1 text-white"> <span className="loading loading-spinner text-primary"></span>Uploading image...</p>}
+          {uploading && <p className="mt-1 text-black"> <span className="loading loading-spinner text-primary"></span>Uploading image...</p>}
           {!uploading && imageUrl && <p className="mt-1 text-green-400">Image uploaded successfully!</p>}
         </div>
 
-        <button type="submit" className="btn btn-primary w-full mt-6" disabled={uploading}>
-          ✅ Submit Product
+        <button type="submit" className=" px-6 w-full py-3 text-center font-semibold bg-pink-500 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
+              
+               style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }} disabled={uploading}>
+           Submit Product
         </button>
       </form>
     </div>

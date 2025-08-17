@@ -61,7 +61,7 @@ const CreateAnAd = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-blue-900  rounded-lg shadow-2xl">
+    <div className="max-w-4xl mx-auto p-6   rounded-lg shadow-2xl">
       <h2 className="text-2xl font-bold mb-4 text-center">📢 Create Advertisement</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Email (readonly) */}
@@ -112,7 +112,11 @@ const CreateAnAd = () => {
           {imageUrl && !uploading && <p className="text-green-500 font-semibold text-sm mt-1">Image uploaded</p>}
         </div>
 
-        <button type="submit" className="btn btn-primary w-full" disabled={uploading}>
+        <button type="submit" className=" px-6 w-full  py-3 text-center font-semibold bg-pink-500 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm "
+              
+               style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }} disabled={uploading}>
           📤 Submit Advertisement
         </button>
       </form>

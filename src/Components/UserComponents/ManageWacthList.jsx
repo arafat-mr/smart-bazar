@@ -64,9 +64,9 @@ const ManageWatchList = () => {
   return (
     <div className="max-w-6xl mx-auto p-4 bg-transparent backdrop-blur-2xl shadow-2xl rounded-md">
       <h1 className="text-2xl font-semibold mb-6">Manage Watchlist</h1>
-      <table className="w-full border-collapse border border-gray-300">
+      <table className="w-full border-collapse border border-black">
         <thead>
-          <tr className="bg-teal-950">
+          <tr className="bg-gray-400">
             <th className="border border-gray-300 p-2 text-left">Product Name</th>
             <th className="border border-gray-300 p-2 text-left">Market Name</th>
             <th className="border border-gray-300 p-2 text-left">Date Added</th>
@@ -75,7 +75,7 @@ const ManageWatchList = () => {
         </thead>
         <tbody>
           {watchlist.map(({ productId, productName, marketName, addedAt }) => (
-            <tr key={productId} className="hover:bg-gray-500">
+            <tr key={productId} className="hover:bg-gray-300">
               <td className="border border-gray-300 p-2">{productName}</td>
               <td className="border border-gray-300 p-2">{marketName}</td>
               <td className="border border-gray-300 p-2">

@@ -88,7 +88,7 @@ const MyAdvertisements = () => {
 
       <div className="overflow-x-auto">
         <table className="table-auto w-full border">
-          <thead className="bg-blue-900 text-white">
+          <thead className="bg-blue-500 text-white">
             <tr>
               <th className="p-2 ">Title</th>
               <th className="p-2">Description</th>

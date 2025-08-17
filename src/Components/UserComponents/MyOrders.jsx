@@ -33,7 +33,7 @@ const MyOrders = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300 text-sm md:text-base">
           <thead>
-            <tr className="bg-gray-500 text-white">
+            <tr className="bg-gray-300 text-black">
               <th className="border p-2 text-left">Product Name</th>
               <th className="border p-2 text-left">Market Name</th>
               <th className="border p-2 text-right">Price per Kg (৳)</th>
@@ -44,7 +44,7 @@ const MyOrders = () => {
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr key={order._id} className="hover:bg-teal-950 text-white">
+              <tr key={order._id} className="hover:bg-teal-950 hover:text-white">
                 <td className="border p-2">{order.productName}</td>
                 <td className="border p-2">{order.marketName}</td>
                 <td className="border p-2 text-right">{parseFloat(order.pricePerKg).toFixed(2)}</td>
@@ -55,7 +55,7 @@ const MyOrders = () => {
                 <td className="border p-2 text-center">
                   <Link
                     to={`/allProductsApproved/${order.productId}`}
-                    className="text-blue-400 hover:underline"
+                    className="text-blue-700 hover:underline"
                   >
                     View Details
                   </Link>

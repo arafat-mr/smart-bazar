@@ -48,19 +48,19 @@ const ViewPriceTrends = () => {
     percentChange = ((last - first) / first) * 100;
   }
 
-  if (isLoading) return <p className="text-center mt-6 text-white">Loading products...</p>;
+  if (isLoading) return <p className="text-center mt-6 text-black">Loading products...</p>;
   if (isError) return <p className="text-center mt-6 text-red-400">Error loading products.</p>;
 
   return (
     <div className="flex flex-col lg:flex-row max-w-7xl mx-auto gap-6 p-4 min-h-[600px] bg-transparent backdrop-blur-2xl shadow-2xl  rounded-2xl">
       {/* Left: Product list with pagination */}
-      <div className="w-full lg:w-1/4 text-white bg-opacity-90 rounded-lg p-4 shadow-md h-[600px] overflow-y-auto">
-        <h2 className="font-bold mb-4 text-lg text-white">Products (Page {page} of {totalPages})</h2>
+      <div className="w-full lg:w-1/4 text-black bg-opacity-90 rounded-lg p-4 shadow-md h-[600px] overflow-y-auto">
+        <h2 className="font-bold mb-4 text-lg text-black">Products (Page {page} of {totalPages})</h2>
         <ul>
           {paginatedProducts.map(product => (
             <li
               key={product._id}
-              className={`cursor-pointer p-3 rounded mb-3 flex text-white  flex-col sm:flex-row gap-3 items-center ${
+              className={`cursor-pointer p-3 rounded mb-3 flex text-black  flex-col sm:flex-row gap-3 items-center ${
                 product._id === selectedProductId ? "bg-gray-500 font-semibold " : "hover:bg-gray-500"
               }`}
               onClick={() => setSelectedProductId(product._id)}
@@ -99,13 +99,13 @@ const ViewPriceTrends = () => {
       {/* Right: Price Trend Chart */}
       <div className="w-full lg:w-3/4  bg-opacity-90 rounded-lg p-6 shadow-md flex flex-col">
         {!selectedProduct ? (
-          <p className="text-center text-white mt-20">Select a product to view price trend</p>
+          <p className="text-center text-black mt-20">Select a product to view price trend</p>
         ) : priceData.length === 0 ? (
-          <p className="text-center text-white mt-20">No price data available</p>
+          <p className="text-center text-black mt-20">No price data available</p>
         ) : (
           <>
             {/* Vendor and Market info */}
-            <div className="mb-6 text-center text-white">
+            <div className="mb-6 text-center text-black">
               <p className="text-lg font-semibold">
                 Vendor: <span className="font-normal">{selectedProduct.vendorName || selectedProduct.vendorEmail}</span>
               </p>
@@ -124,15 +124,15 @@ const ViewPriceTrends = () => {
                 <XAxis
                   dataKey="date"
                   tickFormatter={(dateStr) => format(parseISO(dateStr), "MMM d")}
-                  stroke="white"
+                  stroke="black"
                 />
-                <YAxis stroke="white" />
+                <YAxis stroke="black" />
                 <Tooltip labelFormatter={(dateStr) => format(parseISO(dateStr), "PPP")} />
                 <Legend />
                 <Line
                   type="monotone"
                   dataKey="price"
-                  stroke="white"
+                  stroke="black"
                   dot
                   connectNulls
                   name="Price (৳)"
@@ -141,7 +141,7 @@ const ViewPriceTrends = () => {
             </ResponsiveContainer>
 
             {/* Price change */}
-            <div className="text-center mt-4 font-semibold text-white">
+            <div className="text-center mt-4 font-semibold text-black">
               Price change compare last 5 days:{" "}
               {percentChange > 0
                 ? `🔺 Increased by ${percentChange.toFixed(2)}%`

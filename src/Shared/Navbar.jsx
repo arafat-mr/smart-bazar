@@ -139,7 +139,7 @@ const Navbar = () => {
           htmlFor="drawer-toggle"
           className="drawer-overlay bg-black bg-opacity-50"
         ></label>
-        <div className="w-1/2 h-full bg-base-100 py-7">
+        <div className="w-1/2 h-full bg-gradient-to-r  from-[#fde2ea] to-[#f7eaff] py-7">
           <Link to="/" className="flex flex-col justify-center items-center ">
             <img
               className="h-10 w-10"
