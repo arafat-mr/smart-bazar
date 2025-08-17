@@ -8,6 +8,9 @@ import Reviews from "../../UserReviews/Reviews";
 import ReviewsSection from "../ReviewsSection";
 import { Typewriter } from "react-simple-typewriter";
 import { Link, useNavigate } from "react-router";
+import ExploreSmartBazar from "../../Optionals/Explore";
+import ComingSoon from "../../Optionals/ComingSoon";
+import WhyChooseUs from "../../Optionals/WhyChooseUs";
 const Home = () => {
   const { user } = useAuth();
  const navigate=useNavigate()
@@ -110,6 +113,11 @@ const Home = () => {
       </div>
       <ProductsCardSection />
       <AdsSction />
+      
+
+      <ExploreSmartBazar/>
+      <ComingSoon/>
+      <WhyChooseUs/>
       <Reviews />
       <Counter />
     </div>
