@@ -2,8 +2,9 @@ import axios from 'axios';
 import React from 'react';
 
 const axiosSecure=axios.create({
-    // baseURL:`https://b11a12-server-side-arafat-mr.vercel.app`
-    baseURL:`http://localhost:3000`
+    // baseURL:`https://smart-bazar-server-side-h1u3dmkdu.vercel.app`
+    // baseURL:`http://localhost:3000`
+    baseURL: `https://smart-bazar-server-new.vercel.app`
 })
 axiosSecure.interceptors.request.use(
   (config) => {
