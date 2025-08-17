@@ -52,6 +52,7 @@ const GoogleLogin = () => {
     <button
         onClick={handleGoogleLogin}
         className="btn bg-white text-black border-[#e5e5e5] w-full"
+          style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
       >
         <svg
           aria-label="Google logo"

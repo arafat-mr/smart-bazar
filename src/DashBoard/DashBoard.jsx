@@ -15,25 +15,32 @@ const DashBoard = () => {
   };
 
   // Define links by role
-  const linksByRole = {
-    user: [
-      { to: "/dashboard/viewPriceTrends", label: "View Price Trends" },
-      { to: "/dashboard/watchList", label: "Manage Watch List" },
-      { to: "/dashboard/myOrders", label: "My Orders" },
-    ],
-    vendor: [
-      { to: "/dashboard/addProduct", label: "Add Product" },
-      { to: "/dashboard/myProducts", label: "My Products" },
-      { to: "/dashboard/createAd", label: "Create An Ad" },
-      { to: "/dashboard/myAdvertises", label: "My Advertisements" },
-    ],
-    admin: [
-      { to: "/dashboard/allUsers", label: "All Users" },
-      { to: "/dashboard/allProducts", label: "All Products" },
-      { to: "/dashboard/allOrders", label: "All Orders" },
-      { to: "/dashboard/allAds", label: "All Advertisements" },
-    ],
-  };
+ const linksByRole = {
+  user: [
+    { to: "/dashboard/overview", label: "Overview" },
+    { to: "/dashboard/profile", label: "Profile" },
+    { to: "/dashboard/viewPriceTrends", label: "View Price Trends" },
+    { to: "/dashboard/watchList", label: "Manage Watch List" },
+    { to: "/dashboard/myOrders", label: "My Orders" },
+  ],
+  vendor: [
+    { to: "/dashboard/overview", label: "Overview" },
+    { to: "/dashboard/profile", label: "Profile" },
+    { to: "/dashboard/addProduct", label: "Add Product" },
+    { to: "/dashboard/myProducts", label: "My Products" },
+    { to: "/dashboard/createAd", label: "Create An Ad" },
+    { to: "/dashboard/myAdvertises", label: "My Advertisements" },
+  ],
+  admin: [
+    { to: "/dashboard/overview", label: "Overview" },
+    { to: "/dashboard/profile", label: "Profile" },
+    { to: "/dashboard/allUsers", label: "All Users" },
+    { to: "/dashboard/allProducts", label: "All Products" },
+    { to: "/dashboard/allOrders", label: "All Orders" },
+    { to: "/dashboard/allAds", label: "All Advertisements" },
+  ],
+};
+
 
   // Get links for the current role or empty array
   const menuLinks = linksByRole[role] || [];

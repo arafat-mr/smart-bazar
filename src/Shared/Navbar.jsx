@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import Logo from "./Logo";
@@ -9,6 +9,9 @@ import useUserInfo from "../Hooks/useUserInfo";
 const Navbar = () => {
   const { user, loading, logOut } = useAuth();
   const { userInfo, isLoading: userInfoLoading } = useUserInfo();
+  
+
+
   
   const handleSignOut = () => {
     logOut()
@@ -88,6 +91,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
           <div className="navbar-end gap-2">
+           
             {loading ? (
               <span className="loading loading-spinner text-secondary"></span>
             ) : user ? (

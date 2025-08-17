@@ -12,7 +12,7 @@ import axios from "axios";
 const Register = () => {
   const [imageURL, setImageURL] = useState("");
   const { createUser } = useAuth();
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
   const axiosSecure = useAxiosSecure();
   const {
@@ -22,8 +22,6 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-  
-
     try {
       const res = await createUser(data.email, data.password);
       const user = res.user;
@@ -33,6 +31,9 @@ const Register = () => {
         email: data.email,
         role: "user",
         photoURL: imageURL,
+        contactNumber: data.contactNumber,
+        address: data.address,
+        bio: data.bio || "N/A",
         createdAt: new Date(),
       };
 
@@ -52,7 +53,7 @@ const Register = () => {
       });
 
       setTimeout(() => {
-        naviagate(location?.state || "/");
+        navigate(location?.state || "/");
         Swal.fire({
           icon: "success",
           title: `Welcome ${data.name}`,
@@ -68,26 +69,25 @@ const Register = () => {
       });
     }
   };
+
   const handleImgUpload = async (e) => {
     const image = e.target.files[0];
-   
     const formData = new FormData();
     formData.append("image", image);
     const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
       import.meta.env.VITE_IMG_UPLOAD_KEY
     }`;
-     try {
-    const res = await axios.post(imageUploadUrl, formData);
-    const imgLink = res.data?.data?.url;
-    setImageURL(imgLink); 
-  } catch (err) {
-    
-    Swal.fire("Error", "Image upload failed", "error");
-  }
+    try {
+      const res = await axios.post(imageUploadUrl, formData);
+      const imgLink = res.data?.data?.url;
+      setImageURL(imgLink);
+    } catch (err) {
+      Swal.fire("Error", "Image upload failed", "error");
+    }
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:px-5 py-10 max-w-6xl mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-10 p-5 md:px-5 py-10 max-w-6xl mx-auto text-black">
       <div className="w-full md:w-1/2 flex justify-center">
         <Lottie
           animationData={registerlottie}
@@ -97,10 +97,11 @@ const Register = () => {
       </div>
 
       {/* Form Section */}
-      <div className="w-full md:w-1/2 bg-transparent shadow-2xl p-6 rounded-lg">
-        <h3 className="text-3xl font-semibold mb-6 text-center">
-          Register Now
-        </h3>
+      <div
+        className="w-full md:w-1/2 shadow-2xl p-6 rounded-lg"
+        style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
+      >
+        <h3 className="text-3xl font-semibold mb-6 text-center">Register Now</h3>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -108,7 +109,7 @@ const Register = () => {
         >
           {/* Name */}
           <div>
-            <label className="label">Your Name</label>
+            <label className="label text-black">Your Name</label>
             <input
               type="text"
               {...register("name", { required: true })}
@@ -122,20 +123,17 @@ const Register = () => {
 
           {/* Photo */}
           <div>
-            <label className="label">Photo</label>
+            <label className="label text-black">Photo</label>
             <input
               type="file"
               onChange={handleImgUpload}
               className="file-input file-input-bordered w-full bg-transparent"
             />
-            {errors.photoURL && (
-              <p className="text-red-500 text-sm mt-1">Photo is required</p>
-            )}
           </div>
 
           {/* Email */}
           <div>
-            <label className="label">Email</label>
+            <label className="label text-black">Email</label>
             <input
               type="email"
               {...register("email", { required: true })}
@@ -149,7 +147,7 @@ const Register = () => {
 
           {/* Password */}
           <div>
-            <label className="label">Password</label>
+            <label className="label text-black">Password</label>
             <input
               type="password"
               {...register("password", { required: true, minLength: 6 })}
@@ -164,6 +162,53 @@ const Register = () => {
             )}
           </div>
 
+          {/* Contact Number */}
+<div>
+  <label className="label text-black">Contact Number</label>
+  <input
+    type="tel"
+    {...register("contactNumber", {
+      required: "Contact number is required",
+      pattern: {
+        value: /^\+\d{7,15}$/,
+        message: "Enter a valid contact number starting with + and country code",
+      },
+    })}
+    className="input input-bordered w-full bg-transparent"
+    placeholder="e.g. +14155552671"
+  />
+  {errors.contactNumber && (
+    <p className="text-red-500 text-sm mt-1">
+      {errors.contactNumber.message}
+    </p>
+  )}
+</div>
+
+          {/* Address */}
+          <div>
+            <label className="label text-black">Address</label>
+            <input
+              type="text"
+              {...register("address", { required: "Address is required" })}
+              className="input input-bordered w-full bg-transparent"
+              placeholder="Enter your address"
+            />
+            {errors.address && (
+              <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
+            )}
+          </div>
+
+          {/* Bio (optional) */}
+          <div>
+            <label className="label text-black">Bio</label>
+            <textarea
+              {...register("bio")}
+              className="textarea textarea-bordered w-full bg-transparent"
+              placeholder="Tell us about yourself (optional)"
+              rows={3}
+            />
+          </div>
+
           {/* Account Link */}
           <div className="flex justify-between items-center">
             <div className="flex gap-2 text-sm">
@@ -175,9 +220,16 @@ const Register = () => {
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className="btn btn-primary w-full">
+          <button
+            type="submit"
+            className="px-6 py-3 text-center font-semibold bg-pink-500 text-white rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-105 transition duration-300 hover:animate-pulse 
+             text-sm w-full"
+            style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}
+          >
             Register
           </button>
+
           <GoogleLogin />
         </form>
       </div>

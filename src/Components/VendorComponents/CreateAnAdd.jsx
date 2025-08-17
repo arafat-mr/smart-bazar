@@ -108,7 +108,7 @@ const CreateAnAd = () => {
             onChange={handleImgUpload}
             className="file-input file-input-bordered w-full bg-transparent"
           />
-          {uploading && <p className="text-sm text-white font-semibold mt-1">Uploading image...</p>}
+          {uploading && <p className="text-sm text-black font-semibold mt-1">Uploading image...</p>}
           {imageUrl && !uploading && <p className="text-green-500 font-semibold text-sm mt-1">Image uploaded</p>}
         </div>
 

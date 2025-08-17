@@ -34,6 +34,8 @@ import AdminRoutes from "../Routes/AdminRoutes";
 import Payment from "../Payments/Payment";
 import Faq from "../Optionals/Faq";
 import SmartBazarPlanner from "../Optionals/SmartBazarPlanner";
+import OverView from "../DashBoard/OverView";
+import Profile from "../DashBoard/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -187,6 +189,16 @@ export const router = createBrowserRouter([
           <MyOrders/>
         </UserRoutes>
        
+      },
+      {
+
+
+        path:'overview',
+        Component:OverView
+      },
+      {
+       path:'profile',
+       Component:Profile
       },
       
       {

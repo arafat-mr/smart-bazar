@@ -6,7 +6,7 @@ import useAuth from './useAuth';
 const useUserInfo = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
-
+  
   const { data, isLoading, refetch } = useQuery({
     enabled: !loading && !!user?.email,
     queryKey: ['userInfo', user?.email],
@@ -16,7 +16,7 @@ const useUserInfo = () => {
     },
   });
 
-  return { userInfo: data, isLoading, refetch };
+  return { userInfo: data, isLoading, refetch , };
 };
 
 export default useUserInfo;

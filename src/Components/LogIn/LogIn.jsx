@@ -48,14 +48,16 @@ const onSubmit = data => {
 };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:px-5 py-10 max-w-7xl mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-10 p-5 md:px-5 py-10 max-w-7xl mx-auto">
       {/* Lottie Animation */}
-      <div className="hidden md:block md:w-1/2">
+      <div className=" md:w-1/2">
         <Lottie animationData={login} loop={true} />
       </div>
 
       {/* Form Section */}
-      <div className="w-full md:w-1/2 bg-transparent shadow-2xl p-6 rounded-lg text-white">
+      <div className="w-full md:w-1/2 bg-transparent shadow-2xl p-4 rounded-lg text-black"
+      
+      style={{ boxShadow: "0 0 15px rgba(236, 72, 153, 0.8)" }}>
         <h3 className="text-3xl font-semibold mb-6 text-center">Please Login</h3>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -104,11 +106,13 @@ const onSubmit = data => {
          
             
           {/* </button> */}
-          <button href="#_" class="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md w-full">
-    <span class="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-    <span class="relative w-full py-3 transition-all ease-out bg-trasnparent rounded-md group-hover:bg-opacity-0 duration-400">
+          <button href="#_" className=" px-6  py-3 text-center font-semibold bg-pink-500 text-white  rounded-md shadow-lg 
+             hover:shadow-pink-400/80 hover:scale-100 transition duration-300 hover:animate-pulse 
+             text-sm w-full "
+             
+             >
         <span class="relative text-white">Login</span>
-    </span>
+    
 </button>
 <GoogleLogin/>
         </form>
